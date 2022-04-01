@@ -31,13 +31,14 @@ class HelloSeleniumTest {
     @DisplayName("Check if title is Document")
     public void testTitle() {
         Assertions.assertEquals(driver.getTitle(), "Document");
-        System.out.println(driver.getTitle());
+        System.out.println("Document title: "+driver.getTitle());
     }
 
     @Test
     @DisplayName("check URL")
     public void testURL(){
         Assertions.assertEquals("https://marionmichielsen-frontend.herokuapp.com/", driver.getCurrentUrl());
+        System.out.println("Current URL: "+driver.getCurrentUrl());
     }
 
     @Test
@@ -47,6 +48,7 @@ class HelloSeleniumTest {
         button.click();
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", button);
+        System.out.println("tested Generate table button");
     }
 
 
